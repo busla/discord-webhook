@@ -20,6 +20,9 @@ inputs:
   raw-data:
     description: 'Name of a json file that will be sent as the data for the webhook'
     required: false
+  json-string:
+    description: 'Raw json string that will be sent as the data for the webhook'
+    required: false    
   filename:
     description: 'Name of a file that will be uploaded via the webhook'
     required: false
@@ -37,5 +40,7 @@ runs:
     - ${{ inputs.avatar-url }}
     - -d
     - ${{ inputs.raw-data }}
+    - -s
+    - ${{ inputs.json-string }}    
     - -f
     - ${{ inputs.filename }}
